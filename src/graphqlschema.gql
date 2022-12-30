@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Employee {
+  id: Float!
+  firstName: String!
+  lastName: String!
+  designation: String!
+  city: String!
+}
+
+type Query {
+  findAll: [Employee!]!
+  getOneEmployees(id: Int!): Employee!
+  employeefilter(offset: Int!, limit: Int!): [Employee!]!
+}
+
+type Mutation {
+  createEmployer(employee: EmployeeCreateDto!): Employee!
+  updateEmp(id: Int!, updatedEmp: EmployeeUpdateDto!): Employee!
+  deleteEmp(id: Int!): String!
+  sigin(siginuser: AuthUserDto!): String!
+}
+
+input EmployeeCreateDto {
+  firstName: String!
+  lastName: String!
+  designation: String!
+  city: String!
+}
+
+input EmployeeUpdateDto {
+  firstName: String!
+  lastName: String!
+  designation: String!
+  city: String!
+}
+
+input AuthUserDto {
+  userName: String!
+  password: String!
+}
